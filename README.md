@@ -59,11 +59,6 @@ The project is split into two complementary utilities:
 - **Scorpion (`./scorpion FILE1 [FILE2 ...]`):**
   - Forensic analysis tool that extracts hidden metadata from images (creation/modification dates, GPS coordinates, camera model, dimensions, color profile, EXIF tags).
 
-#### 🎯 Marketable Skills for Internships
-- Automation of passive and active reconnaissance phases (Footprinting).
-- Understanding of Information Disclosure through EXIF data.
-- Mastery of HTTP(S) protocols, DOM parsing, and binary image file manipulation.
-
 ---
 
 ### 02. `2-ft_otp` — Strong Authentication Engine (HOTP/TOTP RFC 4226)
@@ -76,11 +71,6 @@ The project is split into two complementary utilities:
 - **OTP Generation (`ft_otp -k ft_otp.key`):**
   - Dynamic derivation based on HMAC-SHA1 and Dynamic Truncation to produce a random 6-digit code.
   - Time synchronization (system clock access) for direct compatibility with standard industrial validators (e.g., `oathtool --totp`).
-
-#### 🎯 Marketable Skills for Internships
-- Applied cryptography: HMAC, secure hash functions, binary/hexadecimal representation manipulation.
-- Securing secrets at rest (Data-at-rest encryption).
-- Mastery of 2FA/MFA authentication protocols deployed in corporate environments.
 
 ---
 
@@ -98,11 +88,6 @@ The project is split into two complementary utilities:
 - **Containerization:**
   - Orchestrated environment using Docker to ensure reproducibility and process isolation.
 
-#### 🎯 Marketable Skills for Internships
-- Linux system administration & Hardening.
-- Anonymization technologies, onion routing, and privacy protection.
-- DevSecOps principles: isolated containerization, airtight network configuration.
-
 ---
 
 ### 04. `4-reverse me` — Reverse Engineering & Binary Analysis
@@ -115,11 +100,6 @@ The project is split into two complementary utilities:
 - **Source Code Reconstruction (`source.c`):**
   - Faithful reverse engineering translating low-level instructions into structured and functional C source code.
   - Documentation of the validation password for each difficulty level (`level1`, `level2`, ...).
-
-#### 🎯 Marketable Skills for Internships
-- Reverse engineering of proprietary software and potential malware analysis.
-- In-depth understanding of memory models (Stack, Heap, CPU registers, C ABI calling conventions).
-- Ability to audit compiled code to detect backdoors or implementation weaknesses.
 
 ---
 
@@ -140,11 +120,6 @@ The project is split into two complementary utilities:
   - Execution flags: `-h` (help), `-v` (version), `-s` (silent mode).
   - Systematic handling of I/O errors to prevent any unexpected crashes.
 
-#### 🎯 Marketable Skills for Internships
-- Deep understanding of a ransomware kill-chain (encryption, renaming, key management).
-- Mastery of symmetric cryptography standards (AES-GCM/CBC).
-- Ability to design Incident Response and remediation tools.
-
 ---
 
 ### 06. `6-cyber iron dome` — HIDS & Real-Time Attack Detection
@@ -162,11 +137,6 @@ The project is split into two complementary utilities:
 - **Centralized Logging:**
   - Real-time logging of all security alerts in `/var/log/irondome/irondome.log`.
 
-#### 🎯 Marketable Skills for Internships
-- Blue Team / SOC skills: behavioral detection, handling false positives/negatives.
-- Low-level Linux programming: I/O monitoring (`inotify`), entropy measurement, strict memory management.
-- Design of security observability probes (EDR / HIDS).
-
 ---
 
 ### 07. `7-inquisitor network` — Man-in-the-Middle (ARP Spoofing) & Sniffing
@@ -183,11 +153,6 @@ The project is split into two complementary utilities:
   - On-the-fly decoding of the unencrypted FTP protocol: real-time extraction of exchanged credentials and filenames.
 - **Automated Test Lab:**
   - Deployment via Docker Compose simulating a client, an FTP server, and the attacker.
-
-#### 🎯 Marketable Skills for Internships
-- Mastery of Layer 2 and 3 protocols (Ethernet, ARP, IP) and switching mechanisms.
-- Network frame analysis and development of interception tools using Libpcap.
-- Awareness of Zero Trust architectures and the imperative of end-to-end encryption (TLS/SSH vs. cleartext protocols).
 
 ---
 
@@ -207,11 +172,6 @@ The project is split into two complementary utilities:
   - **Time-based SQLi:** Deduction through time induction (`SLEEP()`, `benchmark()`).
 - **Total Database Extraction:**
   - Automatic enumeration of database names, tables, columns, and comprehensive dumping of sensitive tables.
-
-#### 🎯 Marketable Skills for Internships
-- Web AppSec Expertise & OWASP Top 10 (A03:2021 - Injection).
-- Understanding mitigation mechanisms (prepared statements, PDO, ORM, WAF).
-- Offensive scripting skills and web application pentest automation.
 
 ---
 
