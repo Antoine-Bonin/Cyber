@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+from urllib.parse import urljoin, urlparse
+import requests
+from bs4 import BeautifulSoup
+
+VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
+
+parser = argparse.ArgumentParser(description="Spider - Aspirateur d'images")
+
+parser.add_argument("url", type=str, help="URL cible")
+parser.add_argument("-r", "--recursively", action="store_true", help="Active le mode récursif")
+parser.add_argument("-l", "--recursive_depth", type=int, default=5, help="Profondeur maximale")
+parser.add_argument("-p", "--download_path", type=str, default="./data/", help="Dossier de destination")
+
+args = parser.parse_args()
+
+try:
+    response = requests.get(args.url, timeout=5)
+    if response.status_code != 200:
+        print(f"Erreur HTTP : {response.status_code}", file=sys.stderr)
+        sys.exit(1)
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    images = soup.find_all("img")
+
+    for img in images:
+        src = img.get("src")
+        if not src:
+            continue
+
+        # 1. Rendre l'URL absolue si elle était relative
+        full_url = urljoin(args.url, src)
+
+        # 2. Isoler le chemin sans paramètres query (ex: /img.png?size=large -> /img.png)
+        parsed_path = urlparse(full_url).path
+
+        # 3. Filtrer sur les extensions autorisées
+        if parsed_path.lower().endswith(VALID_EXTENSIONS):
+            print(f"Image valide trouvée : {full_url}")
+
+except requests.exceptions.RequestException as e:
+    print(f"Erreur de connexion : {e}", file=sys.stderr)
+    sys.exit(1)
