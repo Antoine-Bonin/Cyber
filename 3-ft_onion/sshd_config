@@ -1,0 +1,26 @@
+Port 4242
+
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+PermitRootLogin no
+
+MaxAuthTries 3
+
+LoginGraceTime 30
+
+PasswordAuthentication yes
+PermitEmptyPasswords no
+
+AllowUsers user42
+
+X11Forwarding no
+AllowTcpForwarding no
+AllowAgentForwarding no
+PrintMotd no
+
+UsePAM no

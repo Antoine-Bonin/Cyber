@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☠️ CYBER-KORHOGO 3000 // HACKER DU DIMANCHE ☠️</title>
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --cyber-pink: #ff007f;
+            --neon-blue: #00f3ff;
+            --dark-bg: #050805;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--matrix-green);
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+            padding: 20px;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.7);
+        }
+
+        /* Mode Coupé Décalé */
+        body.coupe-decale {
+            animation: decale-shake 0.35s infinite alternate ease-in-out;
+            background: linear-gradient(45deg, #120024, #001f24, #240011);
+        }
+
+        @keyframes decale-shake {
+            0% { transform: rotate(-0.8deg) translateY(-4px) scale(1.01); filter: hue-rotate(0deg); }
+            50% { transform: rotate(1deg) translateY(3px); }
+            100% { transform: rotate(-1.2deg) translateY(-2px) scale(0.99); filter: hue-rotate(180deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid var(--matrix-green);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4), inset 0 0 15px rgba(0, 255, 65, 0.2);
+            padding: 25px;
+            background: rgba(0, 10, 2, 0.85);
+            position: relative;
+        }
+
+        .marquee-container {
+            background: #002200;
+            border: 1px dashed var(--matrix-green);
+            padding: 8px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            color: #ffff00;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--matrix-green);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--cyber-pink);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px var(--neon-blue), -2px -2px var(--matrix-green); }
+            50% { text-shadow: -2px 2px var(--matrix-green), 2px -2px var(--cyber-pink); }
+            100% { text-shadow: 2px -2px var(--neon-blue), -2px 2px var(--matrix-green); }
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: #111;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 3px;
+        }
+
+        .ascii-art {
+            white-space: pre;
+            font-size: 11px;
+            line-height: 12px;
+            color: #39ff14;
+            text-align: center;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .terminal-box {
+            background: #000;
+            border: 1px solid #005500;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            height: 180px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .terminal-line {
+            line-height: 1.4;
+        }
+
+        .terminal-prompt {
+            color: var(--neon-blue);
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 650px) {
+            .interactive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            border: 1px solid #005500;
+            padding: 15px;
+            background: #011103;
+        }
+
+        .card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--neon-blue);
+            border-bottom: 1px dashed #005500;
+            padding-bottom: 5px;
+        }
+
+        button.cyber-btn {
+            background: transparent;
+            border: 1px solid var(--matrix-green);
+            color: var(--matrix-green);
+            padding: 10px 14px;
+            font-family: inherit;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        button.cyber-btn:hover {
+            background: var(--matrix-green);
+            color: #000;
+            box-shadow: 0 0 10px var(--matrix-green);
+        }
+
+        button.cyber-btn:active {
+            transform: scale(0.97);
+        }
+
+        button.btn-funky {
+            border-color: var(--cyber-pink);
+            color: var(--cyber-pink);
+        }
+
+        button.btn-funky:hover {
+            background: var(--cyber-pink);
+            color: #fff;
+            box-shadow: 0 0 15px var(--cyber-pink);
+        }
+
+        .progress-bar-bg {
+            background: #111;
+            border: 1px solid var(--matrix-green);
+            height: 22px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background: var(--matrix-green);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s linear;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 2px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #fff;
+            mix-blend-mode: difference;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        .stats-table td {
+            padding: 6px 4px;
+            border-bottom: 1px dotted #004400;
+        }
+
+        .stats-table td:last-child {
+            text-align: right;
+            color: #ffff00;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid var(--matrix-green);
+            padding-top: 15px;
+            font-size: 0.8rem;
+            color: #557755;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="marquee-container">
+        <marquee scrollamount="9">
+            🚨 ALERTE NIVEAU 5 // SITE ULTRA SECRET SUR LE DARKNET TOR // VISITEUR IP DÉTECTÉ // NGINX DOCKER 42 POWERED // AMBIANCE FAROTAGE ACTIVÉE 🚨
+        </marquee>
+    </div>
+
+    <header>
+        <h1>⚡ DJ PIRATE VIP PRO MAX ⚡</h1>
+        <p>Expert Sécurité Réseau en HTML / Infiltration de Grille-Pains en Bluetooth / Spécialiste Coupé-Décalé</p>
+        
+        <div class="badge-list">
+            <span class="badge">🔥 CERTIFIÉ TOR v3</span>
+            <span class="badge">📡 NGINX SUR PORT 80</span>
+            <span class="badge">🔑 SSH 4242 HARDENED</span>
+            <span class="badge">💾 0 OCTET DE RAM GÂCHÉE</span>
+            <span class="badge">🕺 SAGACITÉ NIVEAU 100</span>
+        </div>
+    </header>
+
+    <div class="ascii-art">
+       .---.
+      /     \
+     | () () |    [ CYBER-MAÎTRE DU DARKNET ]
+      \  ^  /     "J'ai injecté du CSS dans le modem"
+       |||||
+    </div>
+
+    <!-- Terminal en direct -->
+    <div class="terminal-box" id="terminal">
+        <div class="terminal-line"><span class="terminal-prompt">[SYSTEM]</span> Initialisation des circuits Tor en oignon... OK</div>
+        <div class="terminal-line"><span class="terminal-prompt">[SYSTEM]</span> Clés de chiffrement Ed25519 validées.</div>
+        <div class="terminal-line"><span class="terminal-prompt">[INFO]</span> Nginx écoute patiemment sur 127.0.0.1:80.</div>
+        <div class="terminal-line"><span class="terminal-prompt">[WARN]</span> Détection d'un visiteur à fort potentiel de groove...</div>
+    </div>
+
+    <div class="interactive-grid">
+        <!-- Boite 1 : Attaque bidon -->
+        <div class="card">
+            <h2>💥 ATTAQUE CYBER-PUISSANTE</h2>
+            <p style="font-size: 0.85rem;">Lance une attaque massive par déni de sommeil sur un serveur quantique :</p>
+            
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="hack-bar"></div>
+                <div class="progress-text" id="hack-status">EN ATTENTE D'INJECTION</div>
+            </div>
+
+            <button class="cyber-btn" onclick="lancerSuperHack()">🚀 DÉCLENCHER LE SUPER PING</button>
+        </div>
+
+        <!-- Boite 2 : Mode Ambiance -->
+        <div class="card">
+            <h2>🕺 CONTROLEUR DE DÉCALÉ</h2>
+            <p style="font-size: 0.85rem;">Active la déstabilisation rythmique du processeur hôte pour esquiver les traceurs :</p>
+            
+            <button class="cyber-btn btn-funky" onclick="toggleDecale()">⚡ ACTIVER LE FAROTAGE CYBER</button>
+            <button class="cyber-btn" style="border-color: #00f3ff; color: #00f3ff;" onclick="bipSynthetiseur()">🔊 BIP SYNTHÉ 8-BIT</button>
+        </div>
+    </div>
+
+    <!-- Matrice de surveillance -->
+    <div class="card" style="margin-bottom: 25px;">
+        <h2>📊 TÉLÉMÉTRIE CLANDESTINE DU NOYAU</h2>
+        <table class="stats-table">
+            <tr>
+                <td>Statut du Pare-feu :</td>
+                <td>IMPROVISÉ MAIS ROBUSTE</td>
+            </tr>
+            <tr>
+                <td>Trafic SSH entrant (Port 4242) :</td>
+                <td>0 BRUTE-FORCEURS (ILS ONT PEUR)</td>
+            </tr>
+            <tr>
+                <td>Consommation mémoire Nginx :</td>
+                <td>EXTRÊMEMENT LÉGER (DOCKER APPROVED)</td>
+            </tr>
+            <tr>
+                <td>Niveau d'anonymat :</td>
+                <td>CLASSIFIÉ OIGNON SECRET DÉFENSE</td>
+            </tr>
+            <tr>
+                <td>Visiteurs depuis 1999 :</td>
+                <td id="visitor-count">1 337 420</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <p>PROJET FT_ONION — PISCINE CYBER 42 — HÉBERGÉ SUR LE RÉSEAU EN OIGNON SANS PARE-FEU OUVERT</p>
+        <p style="margin-top: 5px; color: #00aa00;">« Si le paquet ne passe pas, augmente le tempo. »</p>
+    </footer>
+</div>
+
+<script>
+    // Audio 8-bit généré par l'API Web Audio (aucun fichier MP3 requis)
+    let audioCtx = null;
+    function getAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        return audioCtx;
+    }
+
+    function playBeep(freq, type, duration) {
+        try {
+            const ctx = getAudioContext();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, ctx.currentTime);
+            gain.gain.setValueAtTime(0.08, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + duration);
+        } catch(e) {}
+    }
+
+    function bipSynthetiseur() {
+        playBeep(440, 'square', 0.1);
+        setTimeout(() => playBeep(660, 'sawtooth', 0.12), 110);
+        setTimeout(() => playBeep(880, 'square', 0.2), 220);
+        logTerminal("[AUDIO] Synthétiseur 8-bit déclenché : rythme validé.");
+    }
+
+    // Journal du faux terminal
+    function logTerminal(message) {
+        const terminal = document.getElementById("terminal");
+        const line = document.createElement("div");
+        line.className = "terminal-line";
+        const prompt = document.createElement("span");
+        prompt.className = "terminal-prompt";
+        prompt.textContent = "[HACKBOT] ";
+        line.appendChild(prompt);
+        line.appendChild(document.createTextNode(message));
+        terminal.appendChild(line);
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    // Fausse barre de hack
+    let hackEnCours = false;
+    function lancerSuperHack() {
+        if (hackEnCours) return;
+        hackEnCours = true;
+
+        const bar = document.getElementById("hack-bar");
+        const status = document.getElementById("hack-status");
+        let progress = 0;
+
+        const etapes = [
+            "SCAN DES MICRO-ONDES EN COURS...",
+            "ENVOI DE PAQUETS UDP EN BLUETOOTH...",
+            "TÉLÉCHARGEMENT DE PLUS DE RAM...",
+            "INJECTION DE BASSES COUPE-DECALE...",
+            "CONTOURNEMENT DU MAIRE DU VILLAGE...",
+            "ACCÈS ROOT REFUSÉ MAIS AVEC STYLE !",
+            "SUCCÈS : SYSTÈME DÉSTABILISÉ !"
+        ];
+
+        logTerminal("[START] Début de l'opération cyber-dimensionnelle...");
+        playBeep(300, 'sawtooth', 0.15);
+
+        const interval = setInterval(() => {
+            progress += 10;
+            bar.style.width = progress + "%";
+            
+            let etapeIndex = Math.floor((progress / 100) * (etapes.length - 1));
+            status.textContent = etapes[etapeIndex];
+            playBeep(200 + progress * 8, 'square', 0.05);
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                logTerminal("[OK] Piratage terminé : aucun dégât constaté mais l'honneur est sauf.");
+                playBeep(880, 'triangle', 0.4);
+                setTimeout(() => {
+                    hackEnCours = false;
+                    status.textContent = "ATTAQUE TERMINÉE (VICTOIRE MORALE)";
+                }, 1000);
+            }
+        }, 220);
+    }
+
+    // Bascule Coupé Décalé
+    function toggleDecale() {
+        document.body.classList.toggle("coupe-decale");
+        const active = document.body.classList.contains("coupe-decale");
+        if (active) {
+            logTerminal("[MODE] AMBIANCE FAROTAGE ACTIVÉE ! LE NAVIGATEUR DANSE !");
+            bipSynthetiseur();
+        } else {
+            logTerminal("[MODE] Retour au calme et à la rigueur cryptographique.");
+        }
+    }
+
+    // Simulation d'activité dans le terminal en arrière-plan
+    const messagesRandom = [
+        "Vérification des sockets Tor... Tout est étanche.",
+        "Ping du relais de garde : 42ms.",
+        "Balayage passif : 0 fuite DNS détectée.",
+        "Le conteneur Docker tourne paisiblement.",
+        "Port 4242 surveillé par le démon SSH."
+    ];
+
+    setInterval(() => {
+        const msg = messagesRandom[Math.floor(Math.random() * messagesRandom.length)];
+        logTerminal("[AUTO] " + msg);
+    }, 9000);
+</script>
+</body>
+</html> 
